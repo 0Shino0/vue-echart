@@ -49,7 +49,7 @@ export default {
       // http://localhost:8999/static/map/china.json
       // 由于我们现在获取的地图矢量数据并不是位于KOA的后台，所以不能使用this.$http
       const ret = await axios.get(
-        "http://localhost:8999/static/map/china.json"
+        "https://e-admin.yyshino.top/static/map/china.json"
       );
       // 注册地图
       this.$echarts.registerMap("china", ret.data);
