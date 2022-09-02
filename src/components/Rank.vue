@@ -192,7 +192,7 @@ export default {
   watch: {
     theme() {
       console.log("主题切换");
-      this.chartInstance.dispose(); // 销毁当前的图表
+      this.charInstance.dispose(); // 销毁当前的图表
       this.initChart(); // 重新以最新的图表主题初始化
       this.screenAdapter(); // 完成屏幕的适配
       this.updateChart(); // 更新图表的展示

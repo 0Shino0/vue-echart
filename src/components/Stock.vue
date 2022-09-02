@@ -6,11 +6,12 @@
 
 <script>
 import { mapState } from "vuex";
+
 export default {
   name: "",
   data() {
     return {
-      charInstance: null,
+      chartInstance: null,
       allData: null, // 从服务器中获取的所有数据
       currentIndex: 0, // 当前显示的页数
       timerId: null, // 定时器标识
@@ -43,7 +44,7 @@ export default {
   },
   methods: {
     initChart() {
-      this.charInstance = this.$echarts.init(this.$refs.stock_ref, this.theme);
+      this.chartInstance = this.$echarts.init(this.$refs.stock_ref, this.theme);
       const initOption = {
         // 初始化相关
         title: {
@@ -52,11 +53,11 @@ export default {
           top: 20,
         },
       };
-      this.charInstance.setOption(initOption);
-      this.charInstance.on("mouseover", () => {
+      this.chartInstance.setOption(initOption);
+      this.chartInstance.on("mouseover", () => {
         clearInterval(this.timerId);
       });
-      this.charInstance.on("mouseout", () => {
+      this.chartInstance.on("mouseout", () => {
         this.startInterval();
       });
     },
@@ -130,7 +131,7 @@ export default {
         // 数据相关
         series: seriesArr,
       };
-      this.charInstance.setOption(dataOption);
+      this.chartInstance.setOption(dataOption);
     },
     screenAdapter() {
       const titleFontSize = (this.$refs.stock_ref.offsetWidth / 100) * 3.6;
@@ -181,8 +182,8 @@ export default {
           },
         ],
       };
-      this.charInstance.setOption(adapterOption);
-      this.charInstance.resize();
+      this.chartInstance.setOption(adapterOption);
+      this.chartInstance.resize();
     },
     startInterval() {
       if (this.timerId) {

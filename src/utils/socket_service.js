@@ -33,6 +33,7 @@ export default class SocketService {
         }
         // http://localhost:9998/
         // http://e-api.yyshino.top:9998/
+        // wss://e-api.yyshino.top/
         // http://43.142.74.200:9998/
         this.ws = new WebSocket('wss://e-api.yyshino.top/')
 
