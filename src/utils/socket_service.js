@@ -34,7 +34,7 @@ export default class SocketService {
         // http://localhost:9998/
         // http://e-api.yyshino.top:9998/
         // http://43.142.74.200:9998/
-        this.ws = new WebSocket('ws://43.142.74.200:9998/')
+        this.ws = new WebSocket('ws://e-api.yyshino.top/')
 
         // 连接成功的事件
         this.ws.onopen = () => {
