@@ -84,8 +84,10 @@ export default {
         // 需要获取这个省份的地图矢量数据
         // 判断当前所点击的这个省份的地图矢量数据在mapData中是否存在
         if (!this.mapData[proviceInfo.key]) {
+          // http://localhost:8999
+          // https://e-admin.yyshino.top/
           const ret = await axios.get(
-            "http://localhost:8999" + proviceInfo.path
+            "https://e-admin.yyshino.top" + proviceInfo.path
           );
           this.mapData[proviceInfo.key] = ret.data;
           // console.log(ret);
